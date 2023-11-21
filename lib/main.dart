@@ -1,5 +1,6 @@
-import 'package:coffee_shop_app/home_screen.dart';
+import 'package:coffee_shop_app/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import './screens/welcome_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Color(0xFF212325),
       ),
-      home: HomeScreen(),
+      home: WellcomeScreen(),
     );
   }
 }
