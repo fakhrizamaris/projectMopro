@@ -1,3 +1,5 @@
+import 'package:coffee_shop_app/widgets/home_bottom_bar.dart';
+import 'package:coffee_shop_app/widgets/items_widget.dart';
 import 'package:flutter/material.dart';
 // import './welcome_screen.dart';
 
@@ -65,10 +67,61 @@ class _HomeScreenState extends State<HomeScreen>
                   ),
                 ),
               ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+                width: MediaQuery.of(context).size.width,
+                height: 60,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 50, 54, 56),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: "Find your coffee",
+                    hintStyle: TextStyle(
+                      color: Colors.white.withOpacity(0.5),
+                    ),
+                    
+                  ),
+                ),
+              ),
+              TabBar(
+                controller: _tabController,
+                labelColor: Color(0xFFE57734),
+                unselectedLabelColor: Colors.white.withOpacity(0.5),
+                isScrollable: true,
+                indicator: UnderlineTabIndicator(
+                  borderSide: BorderSide(
+                    width: 3,
+                    color: Color(0xFFE57734),
+
+                  ),
+                  insets: EdgeInsets.symmetric(horizontal: 16),
+                ),
+                labelStyle: TextStyle(fontSize: 20),
+                labelPadding: EdgeInsets.symmetric(horizontal: 20),
+                tabs: [
+                Tab(text: "Hot Coffee",),
+                Tab(text: "Cold Coffee",),
+                Tab(text: "Cappuccino",),
+                Tab(text: "Americano",),
+              ]),
+              SizedBox(height: 10,),
+              Center(
+                child: [
+                  ItemsWidget(),
+                  ItemsWidget(),
+                  ItemsWidget(),
+                  ItemsWidget(),
+                ][_tabController.index],
+              ),
             ],
           ),
         ),
       ),
+      bottomNavigationBar: HomeBottomBar(),
     );
   }
 }

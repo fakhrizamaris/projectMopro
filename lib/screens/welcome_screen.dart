@@ -43,11 +43,11 @@ class WellcomeScreen extends StatelessWidget {
                       splashColor: Colors.black,
                       onTap: () {
                         Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => HomeScreen(),
-                            ),
-                          );
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomeScreen(),
+                          ),
+                        );
                       },
                       child: Container(
                         padding:
